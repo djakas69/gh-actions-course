@@ -10,3 +10,10 @@ jobs:
       - name: Show the Trigger
         run: |
           echo "I have been triggered by ${{ github.event_name }} event"
+        shell: bash
+
+      - name: Debug GitHub Context
+        run: |
+          echo "Debugging all GitHub context variables:"
+          echo "${{ toJSON(github) }}"
+        shell: bash
