@@ -9,7 +9,8 @@ jobs:
     steps:
       - name: Show the Trigger
         run: |
-          echo "I have been triggered by ${{ github.event_name }} event"
+          echo "Hello !"
+          #echo "I have been triggered by ${{ github.event_name }} event"
         shell: bash
 
       - name: Debug GitHub Context
