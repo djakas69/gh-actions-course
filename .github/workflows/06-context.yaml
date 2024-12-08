@@ -18,6 +18,7 @@ jobs:
                 echo "Action: ${{github.action}} "
                 echo "Event Path: ${{github.event_path}} "
                 echo "Workspace: ${{github.workspace}} "
+                echo "Run number ${{github.run_number}} "
             - name: Retreive Variable
               run: |
                 echo "Variable: ${{vars.MY_VAR}}"
