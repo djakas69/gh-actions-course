@@ -8,6 +8,6 @@ jobs:
  echo:
     runs-on: ubuntu-latest
     steps:
-      - run: ecöho "Runnint whenever a PR is opened or synchronized AND Base branch is main"
+      - run: echo "Runnint whenever a PR is opened or synchronized AND Base branch is main"
 
     
