@@ -1,1 +1,2 @@
 Repository containing all examples
+Edited version
