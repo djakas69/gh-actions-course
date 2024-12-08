@@ -30,14 +30,24 @@ jobs:
                 echo "Event Path: ${{github.event_path}} "
                 echo "Workspace: ${{github.workspace}} "
                 echo "Run number ${{github.run_number}} "
+
             - name: Retreive Variable
               run: |
                 echo "Variable: ${{vars.MY_VAR}}"
+
             - name: Print Env Variables
               env:
-                MY_OVERWRITTEN_VAR: "step MY_OVERWRITTEN_VAR"
+                MY_OVERWRITTEN_VAR: "step"
               run: |
-                echo "Workflow Variable: ${{env.MY_WORKFLOW_VAR}}"
+                echo "Workflow env: ${{env.MY_WORKFLOW_VAR}}"
+                echo "Overwritten env: ${{env.MY_OVERWRITTEN_VAR}}"
                 echo "Job Variable: ${{env.MY_JOB_VAR}}"
-                echo "Overwritten Variable: ${{env.MY_OVERWRITTEN_VAR}}"
+            
+            - name: Print Env Variables
+
+              run: |
+                echo "Workflow env: ${{env.MY_WORKFLOW_VAR}}"
+                echo "Overwritten env: ${{env.MY_OVERWRITTEN_VAR}}"
+                
+                
              
