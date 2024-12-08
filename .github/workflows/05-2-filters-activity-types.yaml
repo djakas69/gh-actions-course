@@ -8,6 +8,8 @@ jobs:
  echo:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Runnint whenever a PR is closed"
+      - run: |
+          echo "Runnint whenever a PR is closed"
+          echo "Second commit"
 
     
