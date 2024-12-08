@@ -1,0 +1,22 @@
+name: 06- Context
+on: push
+jobs:
+    echo-data:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Display Information
+              run: |
+                echo "Event name: ${{github.event_name}} "
+                echo "Ref: ${{github.Ref}} "
+                echo "SHA: ${{github.SHA}} "
+                echo "Actor: ${{github.actor}} "
+                echo "Repository: ${{github.repository}} "
+                echo "Repository Owner: ${{github.repository_owner}} "
+                echo "Workflow: ${{github.workflow}} "
+                echo "Action: ${{github.action}} "
+                echo "Event Path: ${{github.event_path}} "
+                echo "Workspace: ${{github.workspace}} "
+            - name: Retreive Variable
+              run: |
+                echo "Variable: ${{vars.MY_VAR}}"
+             
