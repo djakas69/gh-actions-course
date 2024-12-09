@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "[debug] Print-start-up"
-              if: ${{ inputs.debug == 'true' }}
+              if: ${{ inputs.debug }}
               run: |
                 echo "Trig gered by: ${{ github.event_name }}"
                 echo "Branch: ${{ github.ref }}"
