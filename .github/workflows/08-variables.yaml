@@ -2,10 +2,15 @@ name: 08-Using-Variables
 on: 
     push:
     workflow_dispatch:
+env:
+    WORKFLOW_VAR: "I am a WORKFLOW env var"
+    OVERWRITTEN_VAR: "I will be overwritten var"
 jobs:
     echo:
         runs-on: ubuntu-latest
-
+        env:
+           JOB_VAR: "I am a job env var"
+           OVERWRITTEN_VAR: "I have been overwritten in JOB"
         steps:
             - name: "Print ENV Variables"
               env:
@@ -13,4 +18,15 @@ jobs:
                 
               run: | 
                   echo "Step env var: ${{ env.STEP_VAR }}"
+                  echo "Job env var: ${{ env.JOB_VAR }}"
+                  echo "WORKFLOW env var: ${{ env.WORKFLOW_VAR }}"
+                  echo "OVERWRITTEN env var: ${{ env.OVERWRITTEN_VAR }}"
+            - name: "Overwrite job Variables"
+              env:
+                  OVERWRITTEN_VAR: "I have been overwritten at STEP level"
+              run: | 
+                  echo "Step env var: ${{ env.STEP_VAR }}"
+                  echo "Job env var: ${{ env.JOB_VAR }}"
+                  echo "WORKFLOW env var: ${{ env.WORKFLOW_VAR }}"
+                  echo "OVERWRITTEN env var: ${{ env.OVERWRITTEN_VAR }}"
                   
